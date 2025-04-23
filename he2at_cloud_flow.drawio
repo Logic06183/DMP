@@ -1,54 +1,35 @@
 <?xml version="1.0" ?>
-<mxfile host="app.diagrams.net" modified="2025-04-23T00:00:00.000Z">
-  <diagram name="HE2AT Cloud Data Flow">
-    <mxGraphModel>
+<mxfile host="app.diagrams.net" modified="2023-04-23T12:00:00.000Z" agent="Mozilla/5.0" etag="diagram-etag" version="21.0.10">
+  <diagram id="heat_center_data_flow" name="HE²AT Center Cloud-Based Data Flow">
+    <mxGraphModel dx="1422" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
-        <mxCell id="2" value="Data Providers" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#666666" vertex="1" parent="1">
-          <mxGeometry x="320" y="20" width="180" height="40" as_="geometry"/>
+        <mxCell id="title" value="HE²AT Center Cloud-Based Data Flow with Long-Term Data Retention (Post-Funding Restructure)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="100" y="20" width="950" height="40" as="geometry"/>
         </mxCell>
-        <mxCell id="3" value="Core Data Team (UCT)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
-          <mxGeometry x="320" y="100" width="180" height="40" as_="geometry"/>
+        <mxCell id="provider" value="Data Providers" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="200" height="100" as="geometry"/>
         </mxCell>
-        <mxCell id="4" value="Azure Cloud Platform" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
-          <mxGeometry x="320" y="180" width="180" height="40" as_="geometry"/>
+        <mxCell id="provider_info" value="- Original Study Data ownership
+- Secure data transfer protocols
+- In-region data storage
+- Data Transfer Agreements" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="provider">
+          <mxGeometry y="30" width="200" height="70" as="geometry"/>
         </mxCell>
-        <mxCell id="5" value="WHC (Level 1)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00" vertex="1" parent="1">
-          <mxGeometry x="520" y="110" width="180" height="40" as_="geometry"/>
+        <mxCell id="core" value="Core Data Team (UCT)" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="300" y="100" width="240" height="120" as="geometry"/>
         </mxCell>
-        <mxCell id="6" value="CeSHHAR (Level 1)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="1">
-          <mxGeometry x="520" y="180" width="180" height="40" as_="geometry"/>
+        <mxCell id="core_info" value="- Pre-processing &amp; harmonisation
+- Data validation and transformation
+- De-identification processes
+- Geographic masking techniques
+- Audit logs &amp; transformation records
+- Metadata management" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" vertex="1" parent="core">
+          <mxGeometry y="30" width="240" height="90" as="geometry"/>
         </mxCell>
-        <mxCell id="7" value="IBM Africa (Level 1)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" vertex="1" parent="1">
-          <mxGeometry x="520" y="250" width="180" height="40" as_="geometry"/>
-        </mxCell>
-        <mxCell id="8" value="UPGC (Level 1)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
-          <mxGeometry x="520" y="320" width="180" height="40" as_="geometry"/>
-        </mxCell>
-        <mxCell id="9" value="External Researchers (Level 2)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450" vertex="1" parent="1">
-          <mxGeometry x="520" y="390" width="180" height="40" as_="geometry"/>
-        </mxCell>
-        <mxCell id="10" value="Original Study Data (Level 0)" style="endArrow=block;html=1;fontSize=12;" edge="1" parent="1" source="2" target="3">
-          <mxGeometry relative="1" as_="geometry"/>
-        </mxCell>
-        <mxCell id="11" value="Harmonised + De-identified Data by Region" style="endArrow=block;html=1;fontSize=12;" edge="1" parent="1" source="3" target="4">
-          <mxGeometry relative="1" as_="geometry"/>
-        </mxCell>
-        <mxCell id="12" value="" style="endArrow=block;html=1;" edge="1" parent="1" source="4" target="5">
-          <mxGeometry relative="1" as_="geometry"/>
-        </mxCell>
-        <mxCell id="13" value="" style="endArrow=block;html=1;" edge="1" parent="1" source="4" target="6">
-          <mxGeometry relative="1" as_="geometry"/>
-        </mxCell>
-        <mxCell id="14" value="" style="endArrow=block;html=1;" edge="1" parent="1" source="4" target="7">
-          <mxGeometry relative="1" as_="geometry"/>
-        </mxCell>
-        <mxCell id="15" value="" style="endArrow=block;html=1;" edge="1" parent="1" source="4" target="8">
-          <mxGeometry relative="1" as_="geometry"/>
-        </mxCell>
-        <mxCell id="16" value="DAC-approved access to fully de-identified data" style="dashed=1;endArrow=block;html=1;fontSize=12;" edge="1" parent="1" source="4" target="9">
-          <mxGeometry relative="1" as_="geometry"/>
+        <mxCell id="flow1" value="Original Study Data (Level 0)" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="provider" target="core">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>
