@@ -1,0 +1,207 @@
+<mxfile host="65bd71144e">
+    <diagram id="heat_center_data_flow" name="HE²AT Center Cloud-Based Data Flow">
+        <mxGraphModel dx="690" dy="832" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#ffffff" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="title" value="HE²AT Center Cloud-Based Data Flow with Long-Term Data Retention" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="100" y="20" width="950" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="dataProviderSection" value="Data Providers" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="100" width="200" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="dataProviderInfo" value="- Original Study Data ownership&#10;- Secure data transfer protocols&#10;- In-region data storage&#10;- Data Transfer Agreements" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;fontColor=#000000;" parent="dataProviderSection" vertex="1">
+                    <mxGeometry y="30" width="200" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="coreDataTeamSection" value="Core Data Team (Cloud-based)" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="349" y="86" width="240" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="coreDataTeamInfo" value="- Pre-processing &amp; harmonisation&#10;- Data validation and transformation&#10;- De-identification processes&#10;- Geographic masking techniques&#10;- Audit logs &amp; transformation records&#10;- Metadata management" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;fontColor=#000000;" parent="coreDataTeamSection" vertex="1">
+                    <mxGeometry y="30" width="240" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="azureCloudSection" value="Azure Cloud Platform (HE²AT Center Primary Repository)" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="280" width="500" height="380" as="geometry">
+                        <mxRectangle x="40" y="280" width="360" height="30" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="azureCloudHeader" value="Geo-Distributed Storage Architecture" style="text;strokeColor=none;fillColor=#d5e8d4;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;fontStyle=1;fontColor=#000000;" parent="azureCloudSection" vertex="1">
+                    <mxGeometry y="30" width="500" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="levelZeroContainer" value="Level 0: Original Study Data&#10;(Core Data Team only)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=center;fontColor=#000000;" parent="azureCloudSection" vertex="1">
+                    <mxGeometry y="60" width="500" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="levelOneContainer" value="Level 1: Consortium Shared Data&#10;(HE²AT Consortium via RBAC)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=center;fontColor=#000000;" parent="azureCloudSection" vertex="1">
+                    <mxGeometry y="100" width="500" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="level1ExpandedBar" value="Consortium Shared data - limited indirect identifiers. For research involving the named Consortium partners and in projects funded by the NIH, or other funders (e.g. CHEAQI, HC, GHAP)." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=center;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="810" width="970" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="levelTwoContainer" value="Level 2: RP1/RP2 De-identified Data&#10;(DAC-approved external researchers)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=center;fontColor=#000000;" parent="azureCloudSection" vertex="1">
+                    <mxGeometry y="140" width="500" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="levelTwoExpandedBar" value="Retained by HE²AT Center for projects led by institutions other than the Consortium partners. To be reviewed by DAC. Data shared only if providers provide permission for sharing outside of the Consortium." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=center;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="850" width="970" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="levelThreeContainer" value="Level 3: Inferential Data&#10;(Open, non-identifiable aggregates)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=center;fontColor=#000000;" parent="azureCloudSection" vertex="1">
+                    <mxGeometry y="180" width="500" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="azureToDacFlow" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;entryX=0;entryY=0;entryDx=0;entryDy=0;" parent="azureCloudSection" target="externalNode" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="428" y="180" as="sourcePoint"/>
+                        <mxPoint x="430" y="303" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="azureToDacLabel" value="Data Access&#10;Request" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="azureToDacFlow" vertex="1" connectable="0">
+                    <mxGeometry x="-0.0444" y="-1" relative="1" as="geometry">
+                        <mxPoint x="-1" y="11" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="azureSecurity" value="Security &amp; Compliance Features:&#10;- AES-256 encryption (at rest)&#10;- TLS encryption (in transit)&#10;- Azure Active Directory RBAC (Role-Based Access Control)&#10;- Conditional Access Controls&#10;- Azure Key Vault for key management&#10;- Continuous Monitoring (Azure Monitor)&#10;- Audit Logging (Log Analytics)&#10;- Threat Detection (Azure Sentinel)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;fontColor=#000000;" parent="azureCloudSection" vertex="1">
+                    <mxGeometry y="220" width="500" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="ceshharNode" value="CeSHHAR&#10;(Level 1 Access)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="680" y="230" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="whcNode" value="WHC&#10;(Level 1 Access)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="680" y="140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="ibmNode" value="IBM Africa&#10;(Level 1 Access)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="680" y="320" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="upgcNode" value="UPGC&#10;(Level 1 Access)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="680" y="410" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="csagNode" value="CSAG(UCT)&#10;(Level 1 Access)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="680" y="500" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="externalNode" value="External Researchers&#10;(Level 2 Access - DAC &amp;amp; Ethics Approved)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="632" y="584" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="dacNode" value="Data Access Committee (DAC)&#10;&amp;amp; Ethics Review" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="452" y="584" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="dataSecuritySection" value="Data Security Methods" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="840" y="280" width="280" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="deIdentificationInfo" value="- Geographic aggregation to census areas&#10;- Location jittering with Gaussian displacement&#10;- Population density-aware spatial k-anonymity&#10;- Safe Harbor approach for identifiers&#10;- Expert determination review process&#10;- POPIA and GDPR compliant storage regions&#10;- Role-Based Access Control enforced&#10;- Audit trails for all data access events" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;fontColor=#000000;" parent="dataSecuritySection" vertex="1">
+                    <mxGeometry y="30" width="280" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="dtaSection" value="Data Transfer Agreement Framework" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="840" y="140" width="280" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="dtaInfo" value="- Dataset scope and project affiliation&#10;- Region of storage and compliance standards&#10;- Permitted duration and modality of access&#10;- Non-transfer clauses and audit rights&#10;- Data ownership terms and revocability" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;fontColor=#000000;" parent="dtaSection" vertex="1">
+                    <mxGeometry y="30" width="280" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="dataProviderToCoreFlow" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="dataProviderInfo" target="coreDataTeamInfo" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="560" y="410" as="sourcePoint"/>
+                        <mxPoint x="610" y="360" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="dataProviderToCoreLabel" value="Original Study Data&#10;(Level 0)&#10;Secure Transfer" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="dataProviderToCoreFlow" vertex="1" connectable="0">
+                    <mxGeometry x="-0.0667" y="1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="coreToAzureFlow" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;" parent="1" source="coreDataTeamSection" target="azureCloudSection" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="560" y="410" as="sourcePoint"/>
+                        <mxPoint x="610" y="360" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="coreToAzureLabel" value="Harmonised &amp; De-identified Data&#10;Region-specific storage" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="coreToAzureFlow" vertex="1" connectable="0">
+                    <mxGeometry x="-0.4" y="1" relative="1" as="geometry">
+                        <mxPoint x="29" y="10" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="azureToWhcFlow" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBorderColor=#000000;strokeColor=#000000;" parent="1" source="levelOneContainer" target="whcNode" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="560" y="410" as="sourcePoint"/>
+                        <mxPoint x="610" y="360" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="600" y="400"/>
+                            <mxPoint x="600" y="170"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="azureToCeshharFlow" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBorderColor=#000000;strokeColor=#000000;" parent="1" source="levelOneContainer" target="ceshharNode" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="560" y="410" as="sourcePoint"/>
+                        <mxPoint x="610" y="360" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="600" y="400"/>
+                            <mxPoint x="600" y="260"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="azureToIbmFlow" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBorderColor=#000000;strokeColor=#000000;" parent="1" source="levelOneContainer" target="ibmNode" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="560" y="410" as="sourcePoint"/>
+                        <mxPoint x="610" y="360" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="600" y="400"/>
+                            <mxPoint x="600" y="350"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="azureToUpgcFlow" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBorderColor=#000000;strokeColor=#000000;" parent="1" source="levelOneContainer" target="upgcNode" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="560" y="410" as="sourcePoint"/>
+                        <mxPoint x="610" y="360" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="600" y="400"/>
+                            <mxPoint x="600" y="440"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="azureToConsortiumLabel" value="Consortium Shared Data&#10;Role-Based Access Control" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="azureToUpgcFlow" vertex="1" connectable="0">
+                    <mxGeometry x="0.5375" y="1" relative="1" as="geometry">
+                        <mxPoint x="-72" y="-119" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="azureToCsagFlow" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBorderColor=#000000;strokeColor=#000000;" edge="1" parent="1" source="levelOneContainer" target="csagNode">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="560" y="410" as="sourcePoint"/>
+                        <mxPoint x="610" y="360" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="600" y="400"/>
+                            <mxPoint x="600" y="530"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="dacToExternalFlow" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#000000;" parent="1" source="dacNode" target="externalNode" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="560" y="410" as="sourcePoint"/>
+                        <mxPoint x="610" y="360" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="dacToExternalLabel" value="Approval &amp; DTA" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="dacToExternalFlow" vertex="1" connectable="0">
+                    <mxGeometry x="-0.05" relative="1" as="geometry">
+                        <mxPoint x="34" y="33" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="legendSection" value="Data Access Levels" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="685" width="970" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend1" value="Level 0: Original Study Data - Raw, unprocessed data with restricted access to Core Data Team only" style="text;strokeColor=none;fillColor=#f8cecc;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;fontColor=#000000;" parent="legendSection" vertex="1">
+                    <mxGeometry y="30" width="860" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend2" value="Level 1: Consortium Shared Data - Processed data shared only among HE²AT Center Consortium partners with limited indirect identifiers. For research involving the named Consortium partners and in projects funded by the NIH, or other funders (e.g. CHEAQI, HC, GHAP)." style="text;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;fontColor=#000000;" parent="legendSection" vertex="1">
+                    <mxGeometry y="50" width="860" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend3" value="Level 2: RP1/RP2 De-identified Data - Retained by HE²AT Center for projects led by institutions other than the Consortium partners. To be reviewed by DAC. Data shared only if providers provide permission for sharing outside of the Consortium." style="text;strokeColor=none;fillColor=#e1d5e7;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;fontColor=#000000;" parent="legendSection" vertex="1">
+                    <mxGeometry y="70" width="860" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend4" value="Level 3: Inferential Data - Aggregated and anonymized data derived from analyses, available for open access" style="text;strokeColor=none;fillColor=#d5e8d4;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;fontColor=#000000;" parent="legendSection" vertex="1">
+                    <mxGeometry y="90" width="860" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="notesSection" value="Implementation Notes" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="845" y="508" width="312" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="notesList" value="1. Data ownership remains with original providers&#10;2. Cloud migration necessitated by NIH funding changes&#10;3. Regional isolation prevents unlawful data transfer&#10;4. Azure RBAC implements tiered access controls&#10;5. Higher levels of data (2-3) retained by HE²ATCenter&#10;6. Future projects with ethics approval&#10;7. All data usage governed by ethical approvals" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;fontColor=#000000;" parent="notesSection" vertex="1">
+                    <mxGeometry y="30" width="312" height="110" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
